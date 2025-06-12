@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Spam Detection</title>
+    <link rel="stylesheet" href="/app/static/css/index-style.css">
     <link rel="stylesheet" href="{{url_for('static',filename='css/index-style.css')}}">
 </head>
 <body>
-    <p>Hello World</p>
+    <div class="body-section">
+        <div class="body-content">
+            <h1>Spam Detector</h1>
+
+            <form action="/submit" method="post">
+            <textarea name="text" id="text" placeholder="Your email text here.."></textarea><br>
+            <button class="submit">Submit</button>
+            </form>
+            <div class="result-area">
+                {% if result %}
+                <h1>{{ result }}</h1>
+                {% endif %}
+            </div>
+        </div>
+        
+    </div>
 </body>
 </html>
